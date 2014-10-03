@@ -1,5 +1,7 @@
 package gui.controll.elements;
 
+import gui.controll.KeyListener;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,10 +15,11 @@ public class TurnOnIdleButton extends JButton implements ActionListener {
 
 	private Heidi model;
 
-	public TurnOnIdleButton(Heidi model) {
-		super("Idle");
+	public TurnOnIdleButton(Heidi model, KeyListener kl) {
+		super("Idle [F1]");
 		this.model = model;
 		addActionListener(this);
+		kl.addActionListner("F1", this);
 	}
 
 	@Override

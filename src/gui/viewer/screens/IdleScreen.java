@@ -18,6 +18,8 @@ public class IdleScreen extends JPanel {
 		try {
 			img = ImageIO.read(new File("img/idle.jpg"));
 		} catch (IOException e) {
+			System.err.println("Could not load image file!");
+			System.exit(1);
 		}
 	}
 	

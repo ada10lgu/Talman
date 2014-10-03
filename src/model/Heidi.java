@@ -7,7 +7,7 @@ import model.agenda.Agenda;
 public class Heidi extends Observable {
 
 	private Agenda agenda;
-	private String title;
+	private String title = "";
 
 	public enum State {
 		IDLE, // Dsek screen

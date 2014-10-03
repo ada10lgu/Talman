@@ -29,7 +29,7 @@ public class Viewer extends JFrame implements Observer {
 		
 		
 		idle = new IdleScreen();
-		agenda = new AgendaScreen(model.getAgenda());
+		agenda = new AgendaScreen(model);
 		label = new JLabel();
 
 		container = new JPanel();

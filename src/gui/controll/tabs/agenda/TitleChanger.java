@@ -1,4 +1,4 @@
-package gui.controll.elements;
+package gui.controll.tabs.agenda;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,6 +16,9 @@ public class TitleChanger extends JTextField implements ActionListener {
 		super(10);
 		this.model = model;
 		addActionListener(this);
+		
+		setText("Höstterminsmöte 1");
+		actionPerformed(null);
 	}
 
 	@Override
