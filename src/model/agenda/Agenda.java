@@ -124,6 +124,8 @@ public class Agenda extends Observable implements Iterable<Item> {
 	}
 
 	public void removeActive() {
+		if (active.isAccepted())
+			return;
 		items.remove(active);
 		active = null;
 		setChanged();

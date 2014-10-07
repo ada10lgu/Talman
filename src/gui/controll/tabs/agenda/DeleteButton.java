@@ -24,7 +24,7 @@ public class DeleteButton extends JButton implements ActionListener, Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		if (agenda.getActive() == null)
+		if (agenda.getActive() == null || agenda.getActive().isAccepted())
 			setEnabled(false);
 		else
 			setEnabled(true);

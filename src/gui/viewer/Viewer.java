@@ -1,6 +1,7 @@
 package gui.viewer;
 
 import gui.viewer.screens.AgendaScreen;
+import gui.viewer.screens.ClaimScreen;
 import gui.viewer.screens.IdleScreen;
 
 import java.awt.BorderLayout;
@@ -22,6 +23,7 @@ public class Viewer extends JFrame implements Observer {
 	private JLabel label;
 	private IdleScreen idle;
 	private AgendaScreen agenda;
+	private ClaimScreen claim;
 	
 	public Viewer(Heidi model) {
 		this.model= model;
@@ -30,6 +32,7 @@ public class Viewer extends JFrame implements Observer {
 		
 		idle = new IdleScreen();
 		agenda = new AgendaScreen(model);
+		claim = new ClaimScreen(model.getClaimList());
 		label = new JLabel();
 
 		container = new JPanel();
@@ -54,10 +57,12 @@ public class Viewer extends JFrame implements Observer {
 		switch (model.getState()) {
 		case IDLE:
 			container.add(idle,BorderLayout.CENTER);
-			
 			break;
 		case AGENDA:
 			container.add(agenda,BorderLayout.CENTER);
+			break;
+		case CLAIM:
+			container.add(claim,BorderLayout.CENTER);
 			break;
 		default:
 			label.setText("Detta borde inte ske...");

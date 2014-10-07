@@ -13,10 +13,7 @@ public class Starter {
 		
 		WindowCloser wc = new WindowCloser();
 		
-		
 		c.addWindowListener(wc);
 		v.addWindowListener(wc);
-		
-		
 	}
 }
