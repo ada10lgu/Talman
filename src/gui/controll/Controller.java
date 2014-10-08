@@ -2,6 +2,7 @@ package gui.controll;
 
 import gui.controll.elements.ViewChanger;
 import gui.controll.tabs.agenda.AgendaTab;
+import gui.controll.tabs.annex.AnnexTab;
 import gui.controll.tabs.claims.ClaimTab;
 import gui.controll.tabs.speakers.SpeakersTab;
 
@@ -36,7 +37,7 @@ public class Controller extends JFrame {
 		JTabbedPane tp = new JTabbedPane();
 		tp.add(new AgendaTab(model), "Agenda");
 		tp.add(new SpeakersTab(model), "Speakers");
-		tp.add(new SpeakersTab(model), "Annex");
+		tp.add(new AnnexTab(model.getAnnexList()), "Annex");
 		tp.add(new ClaimTab(model.getClaimList()), "Claims");
 
 		add(topPane, BorderLayout.NORTH);

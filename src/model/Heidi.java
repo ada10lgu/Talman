@@ -3,12 +3,14 @@ package model;
 import java.util.Observable;
 
 import model.agenda.Agenda;
+import model.annex.AnnexList;
 import model.claim.ClaimList;
 
 public class Heidi extends Observable {
 
 	private Agenda agenda;
 	private ClaimList cl;
+	private AnnexList al;
 	private String title = "";
 
 	public enum State {
@@ -24,6 +26,7 @@ public class Heidi extends Observable {
 	public Heidi() {
 		agenda = new Agenda();
 		cl = new ClaimList();
+		al = new AnnexList();
 	}
 
 	public synchronized String getTitle() {
@@ -52,6 +55,10 @@ public class Heidi extends Observable {
 
 	public synchronized ClaimList getClaimList() {
 		return cl;
+	}
+
+	public synchronized AnnexList getAnnexList() {
+		return al;
 	}
 
 }
