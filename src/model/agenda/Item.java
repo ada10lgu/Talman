@@ -19,7 +19,7 @@ public class Item implements Comparable<Item> {
 
 	@Override
 	public String toString() {
-		return "ง" + getNumber() + " " + name;
+		return "ยง" + getNumber() + " " + name;
 	}
 
 	public String getNumber() {

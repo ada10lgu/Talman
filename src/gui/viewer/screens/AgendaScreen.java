@@ -105,7 +105,7 @@ public class AgendaScreen extends JPanel implements Observer {
 			int annexSize = 0;
 			for (Item i : agenda) {
 				nbrSize = Math
-						.max(nbrSize, fm.stringWidth("ง" + i.getNumber()));
+						.max(nbrSize, fm.stringWidth("ยง" + i.getNumber()));
 				nameSize = Math.max(nameSize, fm.stringWidth(i.getName()));
 				typeSize = Math.max(typeSize, fm.stringWidth(i.getType()));
 				annexSize = Math.max(annexSize, fm.stringWidth(i.getAnnex()));
@@ -145,7 +145,7 @@ public class AgendaScreen extends JPanel implements Observer {
 					g.drawImage(img, im_x, im_y, IMAGE_SIZE, IMAGE_SIZE, null);
 				}
 
-				g.drawString("ง" + i.getNumber(), numberStart, y);
+				g.drawString("ยง" + i.getNumber(), numberStart, y);
 				g.drawString(i.getType(), typeStart, y);
 				g.drawString(i.getAnnex(), annexStart, y);
 

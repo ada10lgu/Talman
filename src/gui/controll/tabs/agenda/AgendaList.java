@@ -10,11 +10,11 @@ import javax.swing.BoxLayout;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 
 import model.agenda.Agenda;
 import model.agenda.Item;
 
+@SuppressWarnings("serial")
 public class AgendaList extends JPanel implements Observer {
 
 	private Agenda agenda;

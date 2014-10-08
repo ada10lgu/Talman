@@ -21,7 +21,10 @@ public class CSV {
 
 		Scanner s = new Scanner(f);
 
+		System.out.println(s);
+		System.out.println(s.hasNext());
 		while (s.hasNext()) {
+			System.out.println(s);
 			data.add(parseRow(s.nextLine()));
 		}
 
