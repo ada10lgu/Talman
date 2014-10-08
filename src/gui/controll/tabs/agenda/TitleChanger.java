@@ -17,7 +17,7 @@ public class TitleChanger extends JTextField implements ActionListener {
 		this.model = model;
 		addActionListener(this);
 		
-		setText("Höstterminsmöte 1");
+		setText("HÃ¶stterminsmÃ¶te 1");
 		actionPerformed(null);
 	}
 

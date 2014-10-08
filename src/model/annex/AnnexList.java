@@ -12,7 +12,8 @@ public class AnnexList extends Observable implements Iterable<Annex> {
 
 	private ArrayList<Annex> data;
 	private Annex active;
-
+	
+	
 	public AnnexList() {
 		data = new ArrayList<>();
 		updateList();
@@ -23,7 +24,7 @@ public class AnnexList extends Observable implements Iterable<Annex> {
 		for (File f : ANNEX_FILES.listFiles()) {
 			if (f.getName().endsWith(".pdf")) {
 				try {
-					data.add(new Annex(f));
+					data.add(new Annex(f,this));
 				} catch (IOException e) {
 					System.err.println("Could not add " + f);
 				}
@@ -42,9 +43,14 @@ public class AnnexList extends Observable implements Iterable<Annex> {
 		setChanged();
 		notifyObservers();
 	}
-	
+
 	public synchronized Annex getActive() {
 		return active;
+	}
+
+	public void update() {
+		setChanged();
+		notifyObservers();
 	}
 
 }
