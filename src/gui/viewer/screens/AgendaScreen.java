@@ -69,15 +69,15 @@ public class AgendaScreen extends JPanel implements Observer {
 		g.setColor(BG_COLOR);
 		g.fillRect(0, 0, w, h);
 
-		{
-			int l_x = -LOGO_SIZE/2;
-			int l_y = h-LOGO_SIZE;
-			int l_w = LOGO_SIZE * 2;
-			int l_h = l_w;
-
-			g.drawImage(logo, l_x, l_y, l_w, l_h, null);
-			
-		}
+//		{
+//			int l_x = -LOGO_SIZE/2;
+//			int l_y = h-LOGO_SIZE;
+//			int l_w = LOGO_SIZE * 2;
+//			int l_h = l_w;
+//
+//			g.drawImage(logo, l_x, l_y, l_w, l_h, null);
+//			
+//		}
 
 		int startY = TOP_MARGIN;
 
