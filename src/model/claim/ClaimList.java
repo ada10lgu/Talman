@@ -1,7 +1,7 @@
 package model.claim;
 
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Observable;
@@ -25,7 +25,7 @@ public class ClaimList extends Observable implements Iterable<Claim> {
 		csv = null;
 		try {
 			csv = new CSV(new File(CLAIM_FILE));
-		} catch (FileNotFoundException e) {
+		} catch (IOException e) {
 			System.err.println("Could not load claims file");
 			System.exit(1);
 		}
@@ -59,7 +59,7 @@ public class ClaimList extends Observable implements Iterable<Claim> {
 	public synchronized void save() {
 		try {
 			csv.save();
-		} catch (FileNotFoundException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}

@@ -18,7 +18,6 @@ public class Annex {
 	public Annex(File f, AnnexList al) throws IOException {
 		this.al = al;
 		pdf = new PDFFile(f);
-		System.out.println(f);
 		title = f.getName();
 		zoom = 1;
 
