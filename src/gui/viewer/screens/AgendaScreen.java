@@ -21,10 +21,6 @@ import model.agenda.Item;
 @SuppressWarnings("serial")
 public class AgendaScreen extends JPanel implements Observer {
 
-	private Heidi model;
-	private Agenda agenda;
-	private BufferedImage img;
-	private BufferedImage logo;
 
 	private final Color BG_COLOR = Color.WHITE;
 	private final Color TEXT_COLOR = Color.BLACK;
@@ -47,6 +43,11 @@ public class AgendaScreen extends JPanel implements Observer {
 
 	private final int LOGO_SIZE = 200;
 
+	private Heidi model;
+	private Agenda agenda;
+	private BufferedImage img;
+	private BufferedImage logo;
+	
 	public AgendaScreen(Heidi model) {
 		this.model = model;
 		agenda = model.getAgenda();
@@ -69,15 +70,15 @@ public class AgendaScreen extends JPanel implements Observer {
 		g.setColor(BG_COLOR);
 		g.fillRect(0, 0, w, h);
 
-//		{
-//			int l_x = -LOGO_SIZE/2;
-//			int l_y = h-LOGO_SIZE;
-//			int l_w = LOGO_SIZE * 2;
-//			int l_h = l_w;
-//
-//			g.drawImage(logo, l_x, l_y, l_w, l_h, null);
-//			
-//		}
+		{
+			int l_x = w-3*LOGO_SIZE/2;
+			int l_y = h-LOGO_SIZE;
+			int l_w = LOGO_SIZE * 2;
+			int l_h = l_w;
+
+			g.drawImage(logo, l_x, l_y, l_w, l_h, null);
+			
+		}
 
 		int startY = TOP_MARGIN;
 
@@ -105,7 +106,7 @@ public class AgendaScreen extends JPanel implements Observer {
 			int annexSize = 0;
 			for (Item i : agenda) {
 				nbrSize = Math
-						.max(nbrSize, fm.stringWidth("§" + i.getNumber()));
+						.max(nbrSize, fm.stringWidth(model.getParagraphSign() + i.getNumber()));
 				nameSize = Math.max(nameSize, fm.stringWidth(i.getName()));
 				typeSize = Math.max(typeSize, fm.stringWidth(i.getType()));
 				annexSize = Math.max(annexSize, fm.stringWidth(i.getAnnex()));
@@ -145,7 +146,7 @@ public class AgendaScreen extends JPanel implements Observer {
 					g.drawImage(img, im_x, im_y, IMAGE_SIZE, IMAGE_SIZE, null);
 				}
 
-				g.drawString("§" + i.getNumber(), numberStart, y);
+				g.drawString(model.getParagraphSign() + i.getNumber(), numberStart, y);
 				g.drawString(i.getType(), typeStart, y);
 				g.drawString(i.getAnnex(), annexStart, y);
 

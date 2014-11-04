@@ -1,25 +1,30 @@
 package model.agenda;
 
+import model.Heidi;
+
 
 public class Item implements Comparable<Item> {
+	
+	private Heidi model;
 	private Double number;
 	private String name;
 	private String type;
 	private String annex;
 	private boolean accepted;
 
-	public Item(Double number, String name, String type, String annex,
+	public Item(Heidi model, Double number, String name, String type, String annex,
 			boolean accepted) {
 		this.number = number;
 		this.name = name;
 		this.type = type;
 		this.annex = annex;
 		this.accepted = accepted;
+		this.model = model;
 	}
 
 	@Override
 	public String toString() {
-		return "§" + getNumber() + " " + name;
+		return model.getParagraphSign() + getNumber() + " " + name;
 	}
 
 	public String getNumber() {

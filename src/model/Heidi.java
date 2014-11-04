@@ -2,6 +2,7 @@ package model;
 
 import java.util.Observable;
 
+import settings.Settings;
 import model.agenda.Agenda;
 import model.annex.AnnexList;
 import model.claim.ClaimList;
@@ -11,7 +12,7 @@ public class Heidi extends Observable {
 	private Agenda agenda;
 	private ClaimList cl;
 	private AnnexList al;
-	private String title = "";
+	private Settings settings;
 
 	public enum State {
 		IDLE, // Dsek screen
@@ -23,18 +24,19 @@ public class Heidi extends Observable {
 
 	private State state = State.IDLE;
 
-	public Heidi() {
-		agenda = new Agenda();
+	public Heidi(Settings settings) {
+		agenda = new Agenda(this);
 		cl = new ClaimList();
 		al = new AnnexList();
+		this.settings = settings;
 	}
 
 	public synchronized String getTitle() {
-		return title;
+		return settings.getTitle();
 	}
 
 	public synchronized void setTitle(String title) {
-		this.title = title;
+		settings.updateTitle(title);
 		setChanged();
 		notifyObservers();
 	}
@@ -59,6 +61,10 @@ public class Heidi extends Observable {
 
 	public synchronized AnnexList getAnnexList() {
 		return al;
+	}
+	
+	public synchronized String getParagraphSign() {
+		return settings.getParagraph();
 	}
 
 }

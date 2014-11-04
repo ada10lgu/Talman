@@ -11,14 +11,18 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
+import model.Heidi;
+
 public class Agenda extends Observable implements Iterable<Item> {
 
 	private final String DATA_SEPERATOR = "<!>";
 	private final String FILE = "data/agenda";
 	private ArrayList<Item> items = new ArrayList<>();
 	private Item active;
-
-	public Agenda() {
+	private Heidi model;
+	
+	public Agenda(Heidi model) {
+		this.model = model;
 		loadFile();
 	}
 
@@ -44,7 +48,7 @@ public class Agenda extends Observable implements Iterable<Item> {
 			Double number = Double.parseDouble(data[0]);
 			boolean b = data[4].trim().equals("true");
 
-			Item i = new Item(number, data[1].trim(), data[2].trim(),
+			Item i = new Item(model, number, data[1].trim(), data[2].trim(),
 					data[3].trim(), b);
 			items.add(i);
 		}
@@ -85,7 +89,7 @@ public class Agenda extends Observable implements Iterable<Item> {
 	public void newItem(String number, String name, String type, String annex) {
 		double n = Double.parseDouble(number);
 
-		Item i = new Item(n, name, type, annex, false);
+		Item i = new Item(model,n, name, type, annex, false);
 		items.add(i);
 		Collections.sort(items);
 		setChanged();
