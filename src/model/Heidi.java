@@ -66,5 +66,9 @@ public class Heidi extends Observable {
 	public synchronized String getParagraphSign() {
 		return settings.getParagraph();
 	}
+	
+	public synchronized String getAnnexName() {
+		return settings.getAgenda();
+	}
 
 }

@@ -10,8 +10,9 @@ import standalone.csv.CSV;
 public class Settings {
 	private CSV csv;
 	private HashMap<String,ArrayList<String>> data; 
-	private static final String[][] PRESETS = new String[][] { 	{"title","Möte"},
-																{"paragraph","§"}}; 
+	private static final String[][] PRESETS = new String[][] { 	{"title","MÃ¶te"},
+																{"paragraph","Â§"},
+																{"agenda","data/agenda"}}; 
 	
 	
 	public Settings(File f) throws IOException {
@@ -58,6 +59,9 @@ public class Settings {
 		return get("paragraph");
 	}
 	
+	public synchronized String getAgenda() {
+		return get("agenda");
+	}
 	
 	private String get(String title) {
 		return data.get(title).get(1);
