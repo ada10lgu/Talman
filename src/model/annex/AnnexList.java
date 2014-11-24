@@ -1,6 +1,7 @@
 package model.annex;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -14,13 +15,15 @@ public class AnnexList extends Observable implements Iterable<Annex> {
 	private Annex active;
 	
 	
-	public AnnexList() {
+	public AnnexList() throws FileNotFoundException {
 		data = new ArrayList<>();
 		updateList();
 	}
 
-	private void updateList() {
+	private void updateList() throws FileNotFoundException {
 		data.clear();
+		if (!ANNEX_FILES.isDirectory())
+			throw new FileNotFoundException("Annexfolder not found!");
 		for (File f : ANNEX_FILES.listFiles()) {
 			if (f.getName().endsWith(".pdf")) {
 				try {

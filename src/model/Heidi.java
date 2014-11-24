@@ -1,5 +1,6 @@
 package model;
 
+import java.io.FileNotFoundException;
 import java.util.Observable;
 
 import settings.Settings;
@@ -24,7 +25,7 @@ public class Heidi extends Observable {
 
 	private State state = State.IDLE;
 
-	public Heidi(Settings settings) {
+	public Heidi(Settings settings) throws FileNotFoundException {
 		agenda = new Agenda(this);
 		cl = new ClaimList();
 		al = new AnnexList();
