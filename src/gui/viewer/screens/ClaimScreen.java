@@ -21,9 +21,9 @@ public class ClaimScreen extends JPanel implements Observer {
 	private final Color TITLE_COLOR = Color.BLACK;
 	private final Color AUTHOR_COLOR = Color.BLACK;
 
-	private final Font TEXT_FONT = new Font("Verdana", Font.PLAIN, 14);;
-	private final Font TITLE_FONT = new Font("Verdana", Font.PLAIN, 35);
-	private final Font AUTHOR_FONT = new Font("Verdana", Font.PLAIN, 14);
+	private final Font TEXT_FONT = new Font("Verdana", Font.PLAIN, 24);;
+	private final Font TITLE_FONT = new Font("Verdana", Font.PLAIN, 45);
+	private final Font AUTHOR_FONT = new Font("Verdana", Font.PLAIN, 24);
 	
 
 	private final int TOP_MARGIN = 40;
