@@ -7,16 +7,16 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-import model.Heidi;
-import model.Heidi.State;
+import model.TalmanModel;
+import model.TalmanModel.State;
 
 @SuppressWarnings("serial")
 public class ViewChanger extends JButton implements ActionListener {
 
-	private Heidi model;
+	private TalmanModel model;
 	private State state;
 	
-	public ViewChanger(Heidi model, KeyListener kl, String title, String key, State state) {
+	public ViewChanger(TalmanModel model, KeyListener kl, String title, String key, State state) {
 		super(title + " ["+key+"]");
 		this.model = model;
 		this.state = state;

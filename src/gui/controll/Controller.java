@@ -13,13 +13,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
-import model.Heidi;
-import model.Heidi.State;
+import model.TalmanModel;
+import model.TalmanModel.State;
 
 @SuppressWarnings("serial")
 public class Controller extends JFrame {
 
-	public Controller(Heidi model) {
+	public Controller(TalmanModel model) {
 		KeyListener kl = new KeyListener(this);
 
 		setSize(500, 200);

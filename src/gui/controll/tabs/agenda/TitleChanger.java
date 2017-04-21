@@ -5,14 +5,14 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JTextField;
 
-import model.Heidi;
+import model.TalmanModel;
 
 @SuppressWarnings("serial")
 public class TitleChanger extends JTextField implements ActionListener {
 	
-	private Heidi model;
+	private TalmanModel model;
 	
-	public TitleChanger(Heidi model) {
+	public TitleChanger(TalmanModel model) {
 		super(10);
 		this.model = model;
 		addActionListener(this);

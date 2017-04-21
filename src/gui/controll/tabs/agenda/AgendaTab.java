@@ -9,13 +9,13 @@ import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import model.Heidi;
+import model.TalmanModel;
 import model.agenda.Agenda;
 
 @SuppressWarnings("serial")
 public class AgendaTab extends JPanel {
 
-	public AgendaTab(Heidi model) {
+	public AgendaTab(TalmanModel model) {
 		Agenda agenda = model.getAgenda();
 		setLayout(new GridLayout(1, 2));
 

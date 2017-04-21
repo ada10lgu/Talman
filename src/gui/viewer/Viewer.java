@@ -13,12 +13,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import model.Heidi;
+import model.TalmanModel;
 
 @SuppressWarnings("serial")
 public class Viewer extends JFrame implements Observer {
 
-	private Heidi model;
+	private TalmanModel model;
 	private JPanel container;
 	
 	private JLabel label;
@@ -27,7 +27,7 @@ public class Viewer extends JFrame implements Observer {
 	private AnnexScreen annex;
 	private ClaimScreen claim;
 	
-	public Viewer(Heidi model) {
+	public Viewer(TalmanModel model) {
 		this.model= model;
 		setSize(500, 200);
 		

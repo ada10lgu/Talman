@@ -1,18 +1,18 @@
 package model.agenda;
 
-import model.Heidi;
+import model.TalmanModel;
 
 
 public class Item implements Comparable<Item> {
 	
-	private Heidi model;
+	private TalmanModel model;
 	private Double number;
 	private String name;
 	private String type;
 	private String annex;
 	private boolean accepted;
 
-	public Item(Heidi model, Double number, String name, String type, String annex,
+	public Item(TalmanModel model, Double number, String name, String type, String annex,
 			boolean accepted) {
 		this.number = number;
 		this.name = name;

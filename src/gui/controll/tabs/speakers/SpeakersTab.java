@@ -2,12 +2,12 @@ package gui.controll.tabs.speakers;
 
 import javax.swing.JPanel;
 
-import model.Heidi;
+import model.TalmanModel;
 
 @SuppressWarnings("serial")
 public class SpeakersTab extends JPanel {
 
-	public SpeakersTab(Heidi model) {
+	public SpeakersTab(TalmanModel model) {
 
 	}
 }

@@ -14,7 +14,7 @@ import java.util.Observer;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
-import model.Heidi;
+import model.TalmanModel;
 import model.agenda.Agenda;
 import model.agenda.Item;
 
@@ -43,12 +43,12 @@ public class AgendaScreen extends JPanel implements Observer {
 
 	private final int LOGO_SIZE = 200;
 
-	private Heidi model;
+	private TalmanModel model;
 	private Agenda agenda;
 	private BufferedImage img;
 	private BufferedImage logo;
 	
-	public AgendaScreen(Heidi model) {
+	public AgendaScreen(TalmanModel model) {
 		this.model = model;
 		agenda = model.getAgenda();
 		agenda.addObserver(this);

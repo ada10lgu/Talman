@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
-import model.Heidi;
+import model.TalmanModel;
 
 public class Agenda extends Observable implements Iterable<Item> {
 
@@ -19,9 +19,9 @@ public class Agenda extends Observable implements Iterable<Item> {
 	private final String FILE = "data/agenda";
 	private ArrayList<Item> items = new ArrayList<>();
 	private Item active;
-	private Heidi model;
+	private TalmanModel model;
 	
-	public Agenda(Heidi model) {
+	public Agenda(TalmanModel model) {
 		this.model = model;
 		loadFile();
 	}
