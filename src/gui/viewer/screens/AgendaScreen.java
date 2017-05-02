@@ -21,22 +21,21 @@ import model.agenda.Item;
 @SuppressWarnings("serial")
 public class AgendaScreen extends JPanel implements Observer {
 
-
 	private final Color BG_COLOR = Color.WHITE;
-	private final Color TEXT_COLOR = Color.BLACK;
+	private final Color TEXT_COLOR = new Color(0xF280A1);
 	private final Color TITLE_COLOR = Color.BLACK;
-	private final Color NOT_ACCEPTED_COLOR = new Color(0xF280A1);
-	
-	private final Font TEXT_FONT = new Font("Verdana", Font.PLAIN, 14);;
+	private final Color NOT_ACCEPTED_COLOR = Color.BLACK;
+
+	private final Font TEXT_FONT = new Font("Verdana", Font.PLAIN, 12);;
 	private final Font TITLE_FONT = new Font("Verdana", Font.PLAIN, 35);
 
-	private final int TOP_MARGIN = 40;
+	private final int TOP_MARGIN = 25;
 	private final int LEFT_MARGIN = 50;
 	private final int RIGHT_MARGIN = 50;
 
 	private final int X_SPACING = 30;
 	private final int Y_SPACING = 30;
-	private final int Y_TEXT_SPACING = 5;
+	private final int Y_TEXT_SPACING = 0;
 
 	private final int IMAGE_SIZE = 20;
 	private final int IMAGE_SPACING = 5;
@@ -47,7 +46,7 @@ public class AgendaScreen extends JPanel implements Observer {
 	private Agenda agenda;
 	private BufferedImage img;
 	private BufferedImage logo;
-	
+
 	public AgendaScreen(TalmanModel model) {
 		this.model = model;
 		agenda = model.getAgenda();
@@ -71,13 +70,13 @@ public class AgendaScreen extends JPanel implements Observer {
 		g.fillRect(0, 0, w, h);
 
 		{
-			int l_x = w-3*LOGO_SIZE/2;
-			int l_y = h-LOGO_SIZE;
+			int l_x = w - 3 * LOGO_SIZE / 2;
+			int l_y = h - LOGO_SIZE;
 			int l_w = LOGO_SIZE * 2;
 			int l_h = l_w;
 
 			g.drawImage(logo, l_x, l_y, l_w, l_h, null);
-			
+
 		}
 
 		int startY = TOP_MARGIN;
@@ -88,10 +87,9 @@ public class AgendaScreen extends JPanel implements Observer {
 			FontMetrics fm = g.getFontMetrics();
 
 			int titleStart = TOP_MARGIN + fm.getHeight();
-			g.drawString(model.getTitle(), LEFT_MARGIN,
-					titleStart);
+			g.drawString(model.getTitle(), LEFT_MARGIN, titleStart);
 			startY += fm.getHeight();
-			
+
 		}
 
 		startY += Y_SPACING;
@@ -105,8 +103,8 @@ public class AgendaScreen extends JPanel implements Observer {
 			int typeSize = 0;
 			int annexSize = 0;
 			for (Item i : agenda) {
-				nbrSize = Math
-						.max(nbrSize, fm.stringWidth(model.getParagraphSign() + i.getNumber()));
+				nbrSize = Math.max(nbrSize, fm.stringWidth(model
+						.getParagraphSign() + i.getNumber()));
 				nameSize = Math.max(nameSize, fm.stringWidth(i.getName()));
 				typeSize = Math.max(typeSize, fm.stringWidth(i.getType()));
 				annexSize = Math.max(annexSize, fm.stringWidth(i.getAnnex()));
@@ -134,19 +132,20 @@ public class AgendaScreen extends JPanel implements Observer {
 			int y = startY;
 
 			for (Item i : agenda) {
-				
-				if (i.isAccepted()) 
+
+				if (i.isAccepted())
 					g.setColor(TEXT_COLOR);
-				else 
+				else
 					g.setColor(NOT_ACCEPTED_COLOR);
-				
+
 				if (agenda.isActive(i)) {
 					int im_x = LEFT_MARGIN - IMAGE_SIZE - IMAGE_SPACING;
 					int im_y = y - fm.getAscent() / 2 - IMAGE_SIZE / 2;
 					g.drawImage(img, im_x, im_y, IMAGE_SIZE, IMAGE_SIZE, null);
 				}
 
-				g.drawString(model.getParagraphSign() + i.getNumber(), numberStart, y);
+				g.drawString(model.getParagraphSign() + i.getNumber(),
+						numberStart, y);
 				g.drawString(i.getType(), typeStart, y);
 				g.drawString(i.getAnnex(), annexStart, y);
 

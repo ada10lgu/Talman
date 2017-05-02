@@ -13,10 +13,13 @@ public class AnnexList extends Observable implements Iterable<Annex> {
 
 	private ArrayList<Annex> data;
 	private Annex active;
-	
-	
+
 	public AnnexList() throws FileNotFoundException {
 		data = new ArrayList<>();
+
+		if (!ANNEX_FILES.exists())
+			ANNEX_FILES.mkdir();
+
 		updateList();
 	}
 
@@ -27,7 +30,7 @@ public class AnnexList extends Observable implements Iterable<Annex> {
 		for (File f : ANNEX_FILES.listFiles()) {
 			if (f.getName().endsWith(".pdf")) {
 				try {
-					data.add(new Annex(f,this));
+					data.add(new Annex(f, this));
 				} catch (IOException e) {
 					System.err.println("Could not add " + f);
 				}

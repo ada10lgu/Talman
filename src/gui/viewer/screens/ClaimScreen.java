@@ -24,14 +24,12 @@ public class ClaimScreen extends JPanel implements Observer {
 	private final Font TEXT_FONT = new Font("Verdana", Font.PLAIN, 24);;
 	private final Font TITLE_FONT = new Font("Verdana", Font.PLAIN, 45);
 	private final Font AUTHOR_FONT = new Font("Verdana", Font.PLAIN, 24);
-	
 
 	private final int TOP_MARGIN = 40;
 	private final int LEFT_MARGIN = 50;
 	private final int RIGHT_MARGIN = 50;
 
 	private final int Y_SPACING = 30;
-	private final int Y_TEXT_SPACING = 5;
 
 	private ClaimList cl;
 

@@ -26,6 +26,7 @@ public class Settings {
 		}
 		
 		enterPresets();
+		
 		csv.save();
 	}
 	

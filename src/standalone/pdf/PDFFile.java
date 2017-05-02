@@ -6,30 +6,24 @@ import java.io.IOException;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.util.PDFImageWriter;
 
 public class PDFFile {
 
 	private PDDocument doc;
-	
+
 	public PDFFile(File f) throws IOException {
-		
+
 		doc = PDDocument.load(f);
-		
+
 	}
-	
-	
+
 	public int getNumberOfPages() {
 		return doc.getNumberOfPages();
 	}
-	
-	
+
 	public BufferedImage getPage(int n) throws IOException {
-		PDPage page =  (PDPage) doc.getDocumentCatalog().getAllPages().get(n);
+		PDPage page = (PDPage) doc.getDocumentCatalog().getAllPages().get(n);
 		return page.convertToImage();
 	}
-	
-	
-	
-	
+
 }

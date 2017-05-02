@@ -10,11 +10,23 @@ import model.TalmanModel;
 import settings.Settings;
 
 public class Starter {
+
+	public static final File DATA_FOLDER = new File("data");
+
 	public static void main(String[] args) throws IOException {
 
-		
-		
-		String file = "vtmExtra.settings";
+		File folder = DATA_FOLDER;
+		if (args.length > 0)
+			folder = new File(args[0]);
+
+		if (!folder.exists()) {
+			if (!folder.mkdir() || !folder.isDirectory()) {
+				System.err.println("Error creating data folder ("
+						+ folder.getAbsolutePath() + ").");
+			}
+		}
+
+		String file = "vtm.settings";
 
 		if (args.length > 0)
 			file = args[0];

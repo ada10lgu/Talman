@@ -16,18 +16,28 @@ import model.TalmanModel;
 public class Agenda extends Observable implements Iterable<Item> {
 
 	private final String DATA_SEPERATOR = "<!>";
-	private final String FILE = "data/agenda";
+	private final String FOLDER = "data";
+	private final String FILE = "agenda";
 	private ArrayList<Item> items = new ArrayList<>();
 	private Item active;
 	private TalmanModel model;
-	
+
 	public Agenda(TalmanModel model) {
 		this.model = model;
 		loadFile();
 	}
 
 	private void loadFile() {
-		File f = new File(FILE);
+		File folder = new File(FOLDER);
+		if (!folder.exists())
+			folder.mkdir();
+		File f = new File(folder, FILE);
+		if (!f.exists())
+			try {
+				f.createNewFile();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		Scanner s = null;
 		try {
 			s = new Scanner(f);
@@ -78,7 +88,7 @@ public class Agenda extends Observable implements Iterable<Item> {
 
 	public void updateActive(String number, String name, String type,
 			String annex, boolean accepted) throws NumberFormatException {
-		active.update(number, name, type, annex,accepted);
+		active.update(number, name, type, annex, accepted);
 
 		Collections.sort(items);
 		setChanged();
@@ -89,7 +99,7 @@ public class Agenda extends Observable implements Iterable<Item> {
 	public void newItem(String number, String name, String type, String annex) {
 		double n = Double.parseDouble(number);
 
-		Item i = new Item(model,n, name, type, annex, false);
+		Item i = new Item(model, n, name, type, annex, false);
 		items.add(i);
 		Collections.sort(items);
 		setChanged();
@@ -98,7 +108,7 @@ public class Agenda extends Observable implements Iterable<Item> {
 	}
 
 	public void saveAll() {
-		File f = new File(FILE);
+		File f = new File(new File(FOLDER), FILE);
 		PrintWriter pw = null;
 		try {
 			pw = new PrintWriter(f);
@@ -121,7 +131,7 @@ public class Agenda extends Observable implements Iterable<Item> {
 			pw.print(accepted);
 			pw.println();
 		}
-		
+
 		pw.flush();
 		pw.close();
 
@@ -134,7 +144,7 @@ public class Agenda extends Observable implements Iterable<Item> {
 		active = null;
 		setChanged();
 		notifyObservers();
-		
+
 	}
 
 }

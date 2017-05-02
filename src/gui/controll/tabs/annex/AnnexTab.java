@@ -1,11 +1,7 @@
 package gui.controll.tabs.annex;
 
-import gui.controll.tabs.claims.ClaimAdder;
-import gui.controll.tabs.claims.SaveButton;
-
 import java.awt.GridLayout;
 
-import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;

@@ -20,6 +20,7 @@ public class TalmanModel extends Observable {
 		AGENDA, // Dagordning
 		ANNEX, // Bilagor
 		CLAIM, // Yrkande
+		SING, // Sång - Rosa på bal
 		TEXT
 	}
 
