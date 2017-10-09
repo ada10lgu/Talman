@@ -37,14 +37,10 @@ public class AnnexScreen extends JPanel implements Observer {
 	public void paint(Graphics g) {
 		int w = getWidth();
 		int h = getHeight();
-
-		{
-			g.setColor(BG_COLOR);
-			g.fillRect(0, 0, w, h);
-		}
+		g.setColor(BG_COLOR);
+		g.fillRect(0, 0, w, h);
 
 		Annex a = al.getActive();
-
 		if (a == null) {
 			g.setFont(TITLE_FONT);
 			FontMetrics fm = g.getFontMetrics();
@@ -68,37 +64,13 @@ public class AnnexScreen extends JPanel implements Observer {
 				g.drawString(ERROR_MESSAGE, x, y);
 				return;
 			}
+			int x = getWidth() / 2 - img.getWidth() / 2;
 
-			double screenScale = (double) w / h;
-			double imgScale = (double) img.getWidth() / img.getHeight();
+			int extra = getHeight() - img.getHeight();
+			int y = (int) (extra * a.getPossition() / 100.0);
 
-			int x = 0;
-			int y = 0;
-			int imgW = w;
-			int imgH = h;
+			g.drawImage(img, x, y, null);
 
-			if (screenScale > imgScale) {
-				imgW = (int) (h * imgScale);
-
-			} else {
-				imgH = (int) (w / imgScale);
-			}
-
-			double zoom = a.getZoom();
-
-			imgH *= zoom;
-			imgW *= zoom;
-
-			x = w / 2 - imgW / 2;
-			y = h / 2 - imgH / 2;
-			if (y < 0)
-				y = 0;
-
-			int yPos = (int) -(imgH/100.0 * a.getPossition());
-			y = yPos; 
-			
-			
-			g.drawImage(img, x, y, imgW, imgH, null);
 		}
 	}
 

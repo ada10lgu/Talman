@@ -36,7 +36,7 @@ public class AnnexViewer extends JPanel {
 		ps = new PositionScroll();
 		page = new JLabel("Page");
 		pg = new PageScroll();
-		
+
 		add(title);
 		add(zoom);
 		add(sc);
@@ -51,7 +51,7 @@ public class AnnexViewer extends JPanel {
 		active = a;
 		al.setActive(a);
 		title.setText(a.getTitle());
-		pg.setMaximum(a.getNumberOfPages()-1);
+		pg.setMaximum(a.getNumberOfPages() - 1);
 	}
 
 	private class ScaleScroll extends JScrollBar implements AdjustmentListener,
@@ -69,7 +69,7 @@ public class AnnexViewer extends JPanel {
 		@Override
 		public void adjustmentValueChanged(AdjustmentEvent e) {
 			if (active != null)
-				active.setZoom(getValue() / 100.0);
+				active.setZoom(getValue() / 100.0f);
 			zoom.setText("Scale " + getValue() + "%");
 
 		}
@@ -77,7 +77,7 @@ public class AnnexViewer extends JPanel {
 		@Override
 		public void update(Observable arg0, Object arg1) {
 			setValue((int) (100 * active.getZoom()));
-			
+
 		}
 
 	}
@@ -125,7 +125,7 @@ public class AnnexViewer extends JPanel {
 		public void adjustmentValueChanged(AdjustmentEvent e) {
 			if (active != null)
 				active.setPage(getValue());
-			page.setText("Page " + (getValue()+1));
+			page.setText("Page " + (getValue() + 1));
 		}
 
 		@Override

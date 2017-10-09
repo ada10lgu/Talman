@@ -1,40 +1,24 @@
-1<!>Talman förklarar mötet öppnat<!><!><!>false
-2<!>Sektionshymn<!>Sång<!><!>false
-3<!>Tid och sätt<!>Beslut<!><!>false
-4<!>Adjungeringar<!>Beslut<!><!>false
-5<!>Val av två justeringspersoner tillika rösträknare<!>Belsut<!><!>false
-6<!>Föredragningslista<!>Beslut<!><!>false
-7<!>Föregående mötes protokoll<!>Beslut<!>22,23,24<!>false
-8<!>Meddelanden<!>Information<!><!>false
-9<!>Rapport från Styrelsen<!>Information<!><!>false
-10<!>Sektionens ekonomiska status<!>Information<!><!>false
-11<!>Behandling av 2014 års räkenskap<!><!><!>false
-11.1<!>Verksamhetsberättelse<!>Information<!>25, 25<!>false
-11.2<!>Revisorsberättelse<!>Information<!><!>false
-11.3<!>Bokslut<!>Beslut<!>Tavla<!>false
-11.4<!>Ansvarsfrihet för styrelsen<!>Beslut<!><!>false
-12<!>Motion 17001, Inköp av Nintendo Switch<!>Beslut<!>1, 100<!>false
-13<!>Motion 17002, Ändring i adjungeringsprocessen<!>Beslut<!>2, 200<!>false
-14<!>Motion 17003, Inköp av alkotest<!>Beslut<!>3, 300<!>false
-15<!> Motion 17004, Ordförandes sångtexter<!>Beslut<!>4, 400<!>false
-16<!>Motion 17005, Klargörande av revisorns åligganden<!>Beslut<!>5, 500<!>false
-17<!>Motion 17006, Förtydligande av valförandet, kandidatur<!>Beslut<!>6, 600<!>false
-18<!>Motion 17007, Förtydligande av valförandet, valbarhet<!>Beslut<!>7, 700<!>false
-19<!>Motion 17008, Delning av HTM2<!>Beslut<!>8, 800<!>false
-20<!>Motion 17009, Införande av förändringshistorik i sektionens centrala styrdokument<!>Beslut<!>9, 900<!>false
-21<!> Proposition 17501, Nytt utskott i Näringsliv<!>Beslut<!>10<!>false
-22<!>Proposition 17502, Tydligare inlämningsprocess för motioner<!>Beslut<!>11<!>false
-23<!>Proposition 17503, Jobbarkläder för funktionärer<!>Beslut<!>12<!>false
-24<!>Proposition 17504, Pepparna i våra styrdokument<!>Beslut<!>13<!>false
-25<!>Proposition 17505, Nollningsfunktionärer<!>Beslut<!>14<!>false
-26<!>Proposition 17506, Byte av namn på utskottet staben till nollningsutskottet<!>Beslut<!>15<!>false
-27<!>Proposition 17507, Justering av justerare på styrelsemöte<!>Beslut<!>17<!>false
-28<!>Proposition 17508, Funktionärer är bra!<!>Beslut<!>17<!>false
-29<!> Proposition 17509, Valberedning<!>Beslut<!>18<!>false
-30<!>Proposition 17510, Genomförande av röstning<!>Beslut<!>19<!>false
-31<!> Proposition 17511, Ny budgetpost i näringslivsutskottet<!>Beslut<!>20<!>false
-32<!>Proposition 17512, Budgetändringar<!>Beslut<!>21<!>false
-33<!>Val<!>Beslut<!><!>false
-34<!>Entledigande avfunktionär<!>Beslut<!><!>false
-35<!>Övrigt<!>Beslut<!><!>false
-36<!>Talman förklarar mötet avslutat<!><!><!>false
+1<!>Talman förklarar mötet öppnat<!><!><!>true
+2<!>Sektionshymn<!>Sång<!><!>true
+3<!>Tid och sätt<!>Beslut<!><!>true
+4<!>Adjungeringar<!>Beslut<!><!>true
+5<!>Val av två justeringspersoner tillika rösträknare<!>Beslut<!><!>true
+6<!>Föredragningslista<!>Beslut<!><!>true
+7<!>Stadfästande av D-Chips stadgar<!>Beslut<!>7<!>true
+8<!>Behandling av 2014 års räkenskaper<!><!><!>true
+8.1<!>Verksamhetsberättelse<!>Information<!>8, 9<!>false
+8.2<!>Revisorsberättelse<!>Information<!>10<!>false
+8.3<!>Bokslut<!>Beslut<!>Tavla<!>false
+8.4<!>Ansvarsfrihet för styrelsen<!>Beslut<!><!>false
+9<!>Motion 17013, Årskursrepresentanter<!>Beslut<!>1<!>false
+10<!>Motion 17014, Städning av dagar i stadgan<!>Beslut<!>2, 200<!>false
+11<!>Motion 17015, Sena handlingar<!>Beslut<!>3, 300<!>false
+12<!>Motion 17016, Revisors skyldigheter<!>Beslut<!>4, 400<!>false
+13<!>Motion 17017, Bilagor till ordinarie terminsmöte<!>Beslut<!>5, 500<!>false
+14<!>Proposition 17513, Genomförande av röstning<!>Beslut<!>6<!>false
+15<!>Val<!><!><!>false
+15.1<!>Val av Programmästare<!><!><!>false
+15.2<!>Val av vice Programmästare<!><!><!>false
+15.3<!>Val av Karnevalsansvarig<!><!><!>false
+15.4<!>Val av Valberedningsrepresentanter från de fyra lägsta årskurserna<!><!><!>false
+16<!>Talman förklarar mötet avslutat<!><!><!>false

@@ -4,20 +4,24 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-import standalone.pdf.PDFFile;
+import org.icepdf.core.pobjects.Document;
+import org.icepdf.core.pobjects.Page;
+import org.icepdf.core.util.GraphicsRenderingHints;
 
 public class Annex {
 
-	private PDFFile pdf;
+	private Document pdf;
 	private String title;
 	private int active;
-	private double zoom;
+	private float zoom;
 	private int possition;
 	private AnnexList al;
 
 	public Annex(File f, AnnexList al) throws IOException {
 		this.al = al;
-		pdf = new PDFFile(f);
+		pdf = new Document();
+		pdf.setFile(f.getPath());
+
 		title = f.getName();
 		zoom = 1;
 
@@ -40,14 +44,15 @@ public class Annex {
 	}
 
 	public BufferedImage getActivePage() throws IOException {
-		return pdf.getPage(active);
+		return (BufferedImage) pdf.getPageImage(active,
+				GraphicsRenderingHints.SCREEN, Page.BOUNDARY_CROPBOX, 0f, zoom);
 	}
 
 	public double getZoom() {
 		return zoom;
 	}
 
-	public void setZoom(double zoom) {
+	public void setZoom(float zoom) {
 		this.zoom = zoom;
 		al.update();
 	}
