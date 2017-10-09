@@ -26,7 +26,7 @@ public class Starter {
 			}
 		}
 
-		String file = "vtmExtra.settings";
+		String file = "htm1.settings";
 
 		if (args.length > 0)
 			file = args[0];
