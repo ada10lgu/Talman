@@ -23,29 +23,27 @@ public class AgendaTab extends JPanel {
 		jsp.setBorder(BorderFactory.createTitledBorder("Active"));
 		add(jsp);
 
-		
 		JPanel rightPanel = new JPanel();
 		rightPanel.setLayout(new BorderLayout());
-		
+
 		JPanel topPanel = new JPanel();
 		topPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 		topPanel.setBorder(BorderFactory.createTitledBorder("Settings"));
 		topPanel.add(new TitleChanger(model));
 		topPanel.add(new SaveButton(agenda));
 		topPanel.add(new DeleteButton(agenda));
-		
+
 		JPanel bottomPanel = new JPanel();
 		bottomPanel.setLayout(new BoxLayout(bottomPanel, BoxLayout.Y_AXIS));
-		
+
 		JPanel edit = new ItemEditViewer(agenda);
 		edit.setBorder(BorderFactory.createTitledBorder("Item"));
-		JPanel add = new ItemNewViewer(agenda); 
+		JPanel add = new ItemNewViewer(agenda);
 		add.setBorder(BorderFactory.createTitledBorder("Item"));
-		
-		
+
 		bottomPanel.add(edit);
 		bottomPanel.add(add);
-		
+
 		rightPanel.add(topPanel, BorderLayout.NORTH);
 		rightPanel.add(bottomPanel, BorderLayout.CENTER);
 
