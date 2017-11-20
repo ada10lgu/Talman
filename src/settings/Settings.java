@@ -10,10 +10,13 @@ import standalone.csv.CSV;
 public class Settings {
 	private CSV csv;
 	private HashMap<String, ArrayList<String>> data;
+	private File folder;
+
 	private static final String[][] PRESETS = new String[][] { { "title", "Möte" }, { "paragraph", "§" },
 			{ "agenda", "data/agenda" }, { "sang", "rosa" } };
 
 	public Settings(File folder) throws IOException {
+		this.folder = folder;
 		if (!folder.isDirectory()) {
 			throw new RuntimeException("Selected folder is not a folder.");
 		}
@@ -81,6 +84,10 @@ public class Settings {
 		} catch (IOException e) {
 			System.err.println("Changes not saved to file");
 		}
+	}
+
+	public File getFolder() {
+		return folder;
 	}
 
 }

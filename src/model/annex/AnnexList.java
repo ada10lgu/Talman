@@ -4,30 +4,34 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.Observable;
 
+import settings.Settings;
+
 public class AnnexList extends Observable implements Iterable<Annex> {
 
-	private final File ANNEX_FILES = new File("data/annex");
-
+	private File folder;
 	private ArrayList<Annex> data;
 	private Annex active;
 
-	public AnnexList() throws FileNotFoundException {
+	public AnnexList(Settings settings) throws FileNotFoundException {
 		data = new ArrayList<>();
 
-		if (!ANNEX_FILES.exists())
-			ANNEX_FILES.mkdir();
+		folder = new File(settings.getFolder(), "annex");
+
+		if (!folder.exists())
+			folder.mkdir();
 
 		updateList();
 	}
 
 	private void updateList() throws FileNotFoundException {
 		data.clear();
-		if (!ANNEX_FILES.isDirectory())
+		if (!folder.isDirectory())
 			throw new FileNotFoundException("Annexfolder not found!");
-		for (File f : ANNEX_FILES.listFiles()) {
+		for (File f : folder.listFiles()) {
 			if (f.getName().endsWith(".pdf")) {
 				try {
 					data.add(new Annex(f, this));
@@ -36,6 +40,7 @@ public class AnnexList extends Observable implements Iterable<Annex> {
 				}
 			}
 		}
+		Collections.sort(data);
 	}
 
 	@Override

@@ -8,7 +8,7 @@ import org.icepdf.core.pobjects.Document;
 import org.icepdf.core.pobjects.Page;
 import org.icepdf.core.util.GraphicsRenderingHints;
 
-public class Annex {
+public class Annex implements Comparable<Annex> {
 
 	private Document pdf;
 	private String title;
@@ -44,8 +44,7 @@ public class Annex {
 	}
 
 	public BufferedImage getActivePage() throws IOException {
-		return (BufferedImage) pdf.getPageImage(active,
-				GraphicsRenderingHints.SCREEN, Page.BOUNDARY_CROPBOX, 0f, zoom);
+		return (BufferedImage) pdf.getPageImage(active, GraphicsRenderingHints.SCREEN, Page.BOUNDARY_CROPBOX, 0f, zoom);
 	}
 
 	public double getZoom() {
@@ -81,6 +80,19 @@ public class Annex {
 
 	public int getPage() {
 		return active;
+	}
+
+	@Override
+	public int compareTo(Annex a) {
+		return title.compareTo(a.title);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Annex) {
+			return ((Annex) obj).title.equals(title);
+		}
+		return false;
 	}
 
 }

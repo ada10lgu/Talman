@@ -29,7 +29,7 @@ public class TalmanModel extends Observable {
 	public TalmanModel(Settings settings) throws FileNotFoundException {
 		agenda = new Agenda(this);
 		cl = new ClaimList();
-		al = new AnnexList();
+		al = new AnnexList(settings);
 		this.settings = settings;
 	}
 
