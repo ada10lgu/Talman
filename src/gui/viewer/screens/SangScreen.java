@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -26,7 +27,7 @@ public class SangScreen extends JPanel {
 	private final int MIDDLE_MARGIN = 50;
 	private final int Y_TEXT_SPACING = 0;
 
-	private final String TITLE = "Rosa på bal";
+	private String title;
 	private ArrayList<String> text;
 
 	private final File SANG_FILE = new File("rosa");
@@ -35,12 +36,14 @@ public class SangScreen extends JPanel {
 		text = new ArrayList<>();
 		Scanner s = null;
 		try {
-			s = new Scanner(SANG_FILE);
+			s = new Scanner(new FileInputStream(SANG_FILE), "UTF-8");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			return;
 		}
-
+		if (s.hasNext()) {
+			title = s.nextLine();
+		}
 		while (s.hasNext()) {
 			text.add(s.nextLine());
 		}
@@ -59,7 +62,7 @@ public class SangScreen extends JPanel {
 			FontMetrics fm = g.getFontMetrics();
 
 			startY += fm.getHeight();
-			g.drawString(TITLE, LEFT_MARGIN, startY);
+			g.drawString(title, LEFT_MARGIN, startY);
 			startY += fm.getHeight();
 
 		}
