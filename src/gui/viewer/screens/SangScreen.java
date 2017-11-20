@@ -4,13 +4,14 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.swing.JPanel;
+
+import settings.Settings;
 
 @SuppressWarnings("serial")
 public class SangScreen extends JPanel {
@@ -30,13 +31,11 @@ public class SangScreen extends JPanel {
 	private String title;
 	private ArrayList<String> text;
 
-	private final File SANG_FILE = new File("rosa");
-
-	public SangScreen() {
+	public SangScreen(Settings settings) {
 		text = new ArrayList<>();
 		Scanner s = null;
 		try {
-			s = new Scanner(new FileInputStream(SANG_FILE), "UTF-8");
+			s = new Scanner(new FileInputStream(settings.getSang()), "UTF-8");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			return;

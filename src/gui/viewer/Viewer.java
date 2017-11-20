@@ -1,11 +1,5 @@
 package gui.viewer;
 
-import gui.viewer.screens.AgendaScreen;
-import gui.viewer.screens.AnnexScreen;
-import gui.viewer.screens.ClaimScreen;
-import gui.viewer.screens.IdleScreen;
-import gui.viewer.screens.SangScreen;
-
 import java.awt.BorderLayout;
 import java.util.Observable;
 import java.util.Observer;
@@ -14,7 +8,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import gui.viewer.screens.AgendaScreen;
+import gui.viewer.screens.AnnexScreen;
+import gui.viewer.screens.ClaimScreen;
+import gui.viewer.screens.IdleScreen;
+import gui.viewer.screens.SangScreen;
 import model.TalmanModel;
+import settings.Settings;
 
 @SuppressWarnings("serial")
 public class Viewer extends JFrame implements Observer {
@@ -29,7 +29,7 @@ public class Viewer extends JFrame implements Observer {
 	private ClaimScreen claim;
 	private SangScreen sing;
 
-	public Viewer(TalmanModel model) {
+	public Viewer(TalmanModel model, Settings settings) {
 		this.model = model;
 		setSize(500, 200);
 
@@ -37,7 +37,7 @@ public class Viewer extends JFrame implements Observer {
 		agenda = new AgendaScreen(model);
 		claim = new ClaimScreen(model.getClaimList());
 		annex = new AnnexScreen(model.getAnnexList());
-		sing = new SangScreen();
+		sing = new SangScreen(settings);
 		label = new JLabel();
 
 		container = new JPanel();

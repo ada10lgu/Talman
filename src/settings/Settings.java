@@ -11,7 +11,7 @@ public class Settings {
 	private CSV csv;
 	private HashMap<String, ArrayList<String>> data;
 	private static final String[][] PRESETS = new String[][] { { "title", "Möte" }, { "paragraph", "§" },
-			{ "agenda", "data/agenda" } };
+			{ "agenda", "data/agenda" }, { "sang", "rosa" } };
 
 	public Settings(File folder) throws IOException {
 		if (!folder.isDirectory()) {
@@ -63,6 +63,10 @@ public class Settings {
 
 	public synchronized String getAgenda() {
 		return get("agenda");
+	}
+
+	public synchronized File getSang() {
+		return new File(get("sang"));
 	}
 
 	private String get(String title) {

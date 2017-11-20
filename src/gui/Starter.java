@@ -34,7 +34,7 @@ public class Starter {
 		Settings settings = new Settings(folder);
 		TalmanModel model = new TalmanModel(settings);
 		Controller c = new Controller(model);
-		Viewer v = new Viewer(model);
+		Viewer v = new Viewer(model, settings);
 		v.setLocation(200, 200);
 
 		WindowCloser wc = new WindowCloser();
