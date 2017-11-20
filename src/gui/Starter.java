@@ -14,10 +14,18 @@ public class Starter {
 
 	public static void main(String[] args) throws IOException {
 		File folder = DATA_FOLDER;
-		if (args.length > 0)
+		if (args.length == 0) {
+			System.out.printf("No folder selected, using standard (%s)%n", DATA_FOLDER);
+		} else if (args.length == 1) {
 			folder = new File(args[0]);
+			System.out.printf("Using folder %s%n", folder);
+		} else {
+			System.err.println("Illegal arguments, aboring");
+			System.exit(1);
+		}
 
 		if (!folder.exists()) {
+			System.out.println("Folder not found, creating");
 			if (!folder.mkdir() || !folder.isDirectory()) {
 				System.err.println("Error creating data folder (" + folder.getAbsolutePath() + ").");
 			}
