@@ -28,7 +28,7 @@ public class Clock extends JLabel {
 
 		@Override
 		protected void process(List<Void> chunks) {
-			SimpleDateFormat dt1 = new SimpleDateFormat("hh:mm:ss");
+			SimpleDateFormat dt1 = new SimpleDateFormat("HH:mm:ss");
 			setText(dt1.format(new Date()));
 		}
 	}
