@@ -25,8 +25,6 @@ public class ImagePanel extends JPanel {
 			double screenRatio = (double) getWidth() / getHeight();
 			double imageRatio = (double) i.getWidth(null) / i.getHeight(null);
 
-			System.out.printf("screen %f%nimage %f%n", screenRatio, imageRatio);
-
 			if (imageRatio < screenRatio) {
 				w = (int) (imageRatio * h);
 				x = getWidth() / 2 - w / 2;
