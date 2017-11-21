@@ -16,14 +16,14 @@ public class AddPerson extends JPanel {
 
 	private Person active;
 
-	public AddPerson(PersonList pl) {
+	public AddPerson(final PersonList pl) {
 		setLayout(new GridLayout(1, 2));
 
 		JPanel left = new JPanel();
 
-		PersonViewer pw = new PersonViewer();
+		final PersonViewer pw = new PersonViewer();
 
-		JTextField stil = new JTextField(10);
+		final JTextField stil = new JTextField(10);
 		JButton search = new JButton("Search");
 		search.addActionListener(new ActionListener() {
 
