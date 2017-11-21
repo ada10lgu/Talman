@@ -18,4 +18,8 @@ public class Election {
 	public List<Elector> getElectors() {
 		return new ArrayList<>();
 	}
+
+	public String getTitle() {
+		return json.getString("title");
+	}
 }
