@@ -6,6 +6,7 @@ import java.util.Observable;
 import model.agenda.Agenda;
 import model.annex.AnnexList;
 import model.claim.ClaimList;
+import model.person.PersonList;
 import settings.Settings;
 
 public class TalmanModel extends Observable {
@@ -13,6 +14,7 @@ public class TalmanModel extends Observable {
 	private Agenda agenda;
 	private ClaimList cl;
 	private AnnexList al;
+	private PersonList pl;
 	private Settings settings;
 
 	public enum State {
@@ -28,10 +30,12 @@ public class TalmanModel extends Observable {
 	private State state = State.IDLE;
 
 	public TalmanModel(Settings settings) throws FileNotFoundException {
+		this.settings = settings;
+
 		agenda = new Agenda(this);
 		cl = new ClaimList(settings);
 		al = new AnnexList(settings);
-		this.settings = settings;
+		pl = new PersonList(settings);
 	}
 
 	public synchronized String getTitle() {
