@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Observable;
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ import org.json.JSONObject;
 import model.person.PersonList;
 import settings.Settings;
 
-public class ElectionList extends Observable {
+public class ElectionList extends Observable implements Iterable<Election>{
 
 	private File file;
 	private JSONArray json;
@@ -74,5 +75,10 @@ public class ElectionList extends Observable {
 		json.put(electionJson);
 		elections.add(e);
 		save();
+	}
+
+	@Override
+	public Iterator<Election> iterator() {
+		return elections.iterator();
 	}
 }

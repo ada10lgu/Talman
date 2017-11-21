@@ -5,24 +5,24 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-import model.person.Person;
+import model.election.Election;
 
 @SuppressWarnings("serial")
 public class ElectionButton extends JButton implements ActionListener {
 
-	private Person p;
-	private ElectionViewer pw;
+	private Election e;
+	private ElectionViewer ew;
 
-	public ElectionButton(Person p, ElectionViewer pw) {
-		super(p.getName());
-		this.p = p;
-		this.pw = pw;
+	public ElectionButton(Election e, ElectionViewer ew) {
+		super(e.getTitle());
+		this.e = e;
+		this.ew = ew;
 		addActionListener(this);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		pw.setActive(p);
+		ew.setActive(e);
 	}
 
 }

@@ -6,27 +6,27 @@ import java.util.Observer;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 
-import model.person.Person;
-import model.person.PersonList;
+import model.election.Election;
+import model.election.ElectionList;
 
 @SuppressWarnings("serial")
 public class ListPanel extends JPanel implements Observer {
 
-	private PersonList pl;
-	private ElectionViewer pw;
+	private ElectionList el;
+	private ElectionViewer ew;
 
-	public ListPanel(PersonList pl, ElectionViewer pw) {
+	public ListPanel(ElectionList el, ElectionViewer ew) {
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		this.pl = pl;
-		this.pw = pw;
-		pl.addObserver(this);
+		this.el = el;
+		this.ew = ew;
+		el.addObserver(this);
 		updateList();
 	}
 
 	private void updateList() {
 		removeAll();
-		for (Person p : pl)
-			add(new ElectionButton(p,pw));
+		for (Election e : el)
+			add(new ElectionButton(e, ew));
 		updateUI();
 	}
 

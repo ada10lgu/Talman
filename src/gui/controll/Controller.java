@@ -12,6 +12,7 @@ import gui.controll.elements.ViewChanger;
 import gui.controll.tabs.agenda.AgendaTab;
 import gui.controll.tabs.annex.AnnexTab;
 import gui.controll.tabs.claims.ClaimTab;
+import gui.controll.tabs.election.ElectionTab;
 import gui.controll.tabs.person.PersonTab;
 import gui.controll.tabs.speakers.SpeakersTab;
 import model.TalmanModel;
@@ -50,7 +51,8 @@ public class Controller extends JFrame {
 		tp.add(new SpeakersTab(model), "Speakers");
 		tp.add(new AnnexTab(model.getAnnexList()), "Annex");
 		tp.add(new ClaimTab(model.getClaimList()), "Claims");
-		tp.add(new PersonTab(model.getPersonList()), "Person");
+		tp.add(new PersonTab(model.getPersonList()), "Persons");
+		tp.add(new ElectionTab(model.getElectionList()), "Elections");
 
 		add(topPane, BorderLayout.NORTH);
 		add(tp, BorderLayout.CENTER);
