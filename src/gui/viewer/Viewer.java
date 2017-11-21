@@ -40,7 +40,7 @@ public class Viewer extends JFrame implements Observer {
 		claim = new ClaimScreen(model.getClaimList());
 		annex = new AnnexScreen(model.getAnnexList());
 		sing = new SangScreen(settings);
-		person = new ElectionScreen();
+		person = new ElectionScreen(model.getElectionList());
 
 		label = new JLabel();
 

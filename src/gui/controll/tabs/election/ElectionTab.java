@@ -12,7 +12,7 @@ public class ElectionTab extends JPanel {
 	public ElectionTab(ElectionList el) {
 		setLayout(new GridLayout(1, 2));
 
-		ElectionViewer ew = new ElectionViewer();
+		ElectionViewer ew = new ElectionViewer(el);
 
 		JPanel left = new ListPanel(el, ew);
 		JPanel right = new JPanel();

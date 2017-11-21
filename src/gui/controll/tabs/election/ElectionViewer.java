@@ -4,78 +4,54 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import gui.ImagePanel;
 import model.election.Election;
+import model.election.ElectionList;
 
 @SuppressWarnings("serial")
-public class ElectionViewer extends JPanel implements ActionListener {
+public class ElectionViewer extends JPanel {
 
 	private Election active;
-	private JLabel name;
-	private JLabel stil;
-	private ImagePanel image;
-	private JTextField url;
+	private JLabel title;
+	private JTextField participants;
 
-	public ElectionViewer() {
-		setLayout(null);
+	public ElectionViewer(ElectionList el) {
 		setBackground(Color.WHITE);
-		name = new JLabel();
-		stil = new JLabel();
-		image = new ImagePanel(null);
-		url = new JTextField(10);
-		url.addActionListener(this);
 
-		add(name);
-		add(stil);
-		add(image);
-		add(url);
-	}
+		JButton display = new JButton("Display");
+		display.addActionListener(new ActionListener() {
 
-	@Override
-	public void repaint() {
-		if (name != null) {
-			// System.out.println("paint");
-			// int h = name.getPreferredSize().height;
-			//
-			// int nameW = name.getPreferredSize().width;
-			//
-			// name.setBounds(getWidth() / 2 - nameW / 2, h, nameW, h);
-			//
-			// int stilW = stil.getPreferredSize().width;
-			//
-			// stil.setBounds(getWidth() / 2 - stilW / 2, 2 * h, stilW, h);
-			//
-			// int imageH = getHeight() - h * 7;
-			//
-			// image.setBounds(0, h * 4, getWidth(), imageH);
-			//
-			// int urlW = url.getPreferredSize().width;
-			//
-			// url.setBounds(getWidth() / 2 - urlW / 2, getHeight() - h * 2,
-			// urlW, h);
-		}
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				el.setDisplay(active);
+			}
+		});
+		participants = new JTextField(40);
+		participants.addActionListener(new ActionListener() {
 
-		super.repaint();
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				active.setParticipants(participants.getText());
+			}
+		});
+		title = new JLabel("None selected");
+
+		add(title);
+		add(display);
+		add(participants);
 	}
 
 	public void setActive(Election e) {
 		active = e;
 		if (e != null) {
-			// name.setText(p.getName());
-			// stil.setText(p.getSTIL());
-			// image.setImage(p.getImage());
-			// url.setText(p.getImageURL());
+			title.setText(e.getTitle());
+			participants.setText(e.toString());
 		}
 		repaint();
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-
 	}
 
 }

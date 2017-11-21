@@ -101,4 +101,12 @@ public class PersonList extends Observable implements Iterable<Person> {
 		csv.getData().add(p.data);
 		save();
 	}
+
+	public Person getOrCreateByStil(String s) {
+		Person p = search(s);
+		if (p != null) {
+			add(p);
+		}
+		return p;
+	}
 }
