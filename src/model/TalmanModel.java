@@ -38,7 +38,7 @@ public class TalmanModel extends Observable {
 		cl = new ClaimList(settings);
 		al = new AnnexList(settings);
 		pl = new PersonList(settings);
-		el = new ElectionList(settings);
+		el = new ElectionList(settings, pl);
 	}
 
 	public synchronized String getTitle() {
