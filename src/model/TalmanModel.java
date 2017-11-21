@@ -6,6 +6,7 @@ import java.util.Observable;
 import model.agenda.Agenda;
 import model.annex.AnnexList;
 import model.claim.ClaimList;
+import model.election.ElectionList;
 import model.person.PersonList;
 import settings.Settings;
 
@@ -15,6 +16,7 @@ public class TalmanModel extends Observable {
 	private ClaimList cl;
 	private AnnexList al;
 	private PersonList pl;
+	private ElectionList el;
 	private Settings settings;
 
 	public enum State {
@@ -36,6 +38,7 @@ public class TalmanModel extends Observable {
 		cl = new ClaimList(settings);
 		al = new AnnexList(settings);
 		pl = new PersonList(settings);
+		el = new ElectionList(settings);
 	}
 
 	public synchronized String getTitle() {
@@ -68,6 +71,14 @@ public class TalmanModel extends Observable {
 
 	public synchronized AnnexList getAnnexList() {
 		return al;
+	}
+
+	public synchronized PersonList getPersonList() {
+		return pl;
+	}
+
+	public synchronized ElectionList getElectionList() {
+		return el;
 	}
 
 	public synchronized String getParagraphSign() {

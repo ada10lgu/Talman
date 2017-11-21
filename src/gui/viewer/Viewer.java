@@ -12,6 +12,7 @@ import gui.viewer.screens.AgendaScreen;
 import gui.viewer.screens.AnnexScreen;
 import gui.viewer.screens.ClaimScreen;
 import gui.viewer.screens.IdleScreen;
+import gui.viewer.screens.ElectionScreen;
 import gui.viewer.screens.SangScreen;
 import model.TalmanModel;
 import settings.Settings;
@@ -28,6 +29,7 @@ public class Viewer extends JFrame implements Observer {
 	private AnnexScreen annex;
 	private ClaimScreen claim;
 	private SangScreen sing;
+	private ElectionScreen person;
 
 	public Viewer(TalmanModel model, Settings settings) {
 		this.model = model;
@@ -38,6 +40,8 @@ public class Viewer extends JFrame implements Observer {
 		claim = new ClaimScreen(model.getClaimList());
 		annex = new AnnexScreen(model.getAnnexList());
 		sing = new SangScreen(settings);
+		person = new ElectionScreen();
+
 		label = new JLabel();
 
 		container = new JPanel();
@@ -72,6 +76,9 @@ public class Viewer extends JFrame implements Observer {
 			break;
 		case SING:
 			container.add(sing, BorderLayout.CENTER);
+			break;
+		case ELECTION:
+			container.add(person, BorderLayout.CENTER);
 			break;
 		default:
 			label.setText("Detta borde inte ske...");
