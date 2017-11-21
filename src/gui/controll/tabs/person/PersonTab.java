@@ -19,6 +19,7 @@ public class PersonTab extends JPanel {
 
 		right.setLayout(new GridLayout(2, 1));
 		right.add(pw);
+		right.add(new AddPerson(pl));
 		add(left);
 		add(right);
 

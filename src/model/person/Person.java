@@ -9,7 +9,7 @@ import javax.imageio.ImageIO;
 
 public class Person {
 
-	private ArrayList<String> data;
+	ArrayList<String> data;
 	private PersonList pl;
 	private Image image;
 

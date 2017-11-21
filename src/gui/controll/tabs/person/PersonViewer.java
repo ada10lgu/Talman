@@ -63,10 +63,12 @@ public class PersonViewer extends JPanel implements ActionListener {
 
 	public void setActive(Person p) {
 		active = p;
-		name.setText(p.getName());
-		stil.setText(p.getSTIL());
-		image.setImage(p.getImage());
-		url.setText(p.getImageURL());
+		if (p != null) {
+			name.setText(p.getName());
+			stil.setText(p.getSTIL());
+			image.setImage(p.getImage());
+			url.setText(p.getImageURL());
+		}
 		repaint();
 	}
 

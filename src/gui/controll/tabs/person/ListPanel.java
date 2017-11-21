@@ -33,6 +33,7 @@ public class ListPanel extends JPanel implements Observer {
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		updateList();
+		System.out.println("List updated");
 	}
 
 }

@@ -19,5 +19,6 @@
 	<classpathentry kind="lib" path="lib/pdf/icepdf-pro.jar"/>
 	<classpathentry kind="lib" path="lib/pdf/icepdf-viewer.jar"/>
 	<classpathentry kind="lib" path="lib/pdf/levigo-jbig2-imageio.jar"/>
+	<classpathentry kind="lib" path="lib/json-20160212.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
