@@ -21,7 +21,7 @@ public class Settings {
 			throw new RuntimeException("Selected folder is not a folder.");
 		}
 		File f = new File(folder, "settings");
-		System.out.printf("Settings file: %s%n", folder);
+		System.out.printf("Settings file: %s%n", f);
 		csv = new CSV(f);
 		data = new HashMap<>();
 

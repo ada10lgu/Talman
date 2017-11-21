@@ -3,10 +3,10 @@ package model;
 import java.io.FileNotFoundException;
 import java.util.Observable;
 
-import settings.Settings;
 import model.agenda.Agenda;
 import model.annex.AnnexList;
 import model.claim.ClaimList;
+import settings.Settings;
 
 public class TalmanModel extends Observable {
 
@@ -21,6 +21,7 @@ public class TalmanModel extends Observable {
 		ANNEX, // Bilagor
 		CLAIM, // Yrkande
 		SING, // Sång - Rosa på bal
+		ELECTION, // Valskärm
 		TEXT
 	}
 
@@ -28,7 +29,7 @@ public class TalmanModel extends Observable {
 
 	public TalmanModel(Settings settings) throws FileNotFoundException {
 		agenda = new Agenda(this);
-		cl = new ClaimList();
+		cl = new ClaimList(settings);
 		al = new AnnexList(settings);
 		this.settings = settings;
 	}
@@ -64,11 +65,11 @@ public class TalmanModel extends Observable {
 	public synchronized AnnexList getAnnexList() {
 		return al;
 	}
-	
+
 	public synchronized String getParagraphSign() {
 		return settings.getParagraph();
 	}
-	
+
 	public synchronized String getAnnexName() {
 		return settings.getAgenda();
 	}

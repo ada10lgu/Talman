@@ -6,17 +6,18 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Observable;
 
+import settings.Settings;
 import standalone.csv.CSV;
 
 public class ClaimList extends Observable implements Iterable<Claim> {
 
-	private final String CLAIM_FILE = "data/claims";
-
+	private File file;
 	private ArrayList<Claim> claims;
 	private Claim active;
 	private CSV csv;
 
-	public ClaimList() {
+	public ClaimList(Settings settings) {
+		file = new File(settings.getFolder(), "claims");
 		claims = new ArrayList<>();
 		loadClaimes();
 	}
@@ -24,7 +25,7 @@ public class ClaimList extends Observable implements Iterable<Claim> {
 	private void loadClaimes() {
 		csv = null;
 		try {
-			csv = new CSV(new File(CLAIM_FILE));
+			csv = new CSV(file);
 		} catch (IOException e) {
 			System.err.println("Could not load claims file");
 			System.exit(1);
@@ -34,8 +35,7 @@ public class ClaimList extends Observable implements Iterable<Claim> {
 			claims.add(new Claim(claim, this));
 	}
 
-	public synchronized void addClaim(String name, String author,
-			String description) {
+	public synchronized void addClaim(String name, String author, String description) {
 		ArrayList<String> data = new ArrayList<>();
 		description = description.replaceAll("\n", "<br>");
 		data.add(name);

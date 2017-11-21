@@ -1,11 +1,5 @@
 package gui.controll;
 
-import gui.controll.elements.ViewChanger;
-import gui.controll.tabs.agenda.AgendaTab;
-import gui.controll.tabs.annex.AnnexTab;
-import gui.controll.tabs.claims.ClaimTab;
-import gui.controll.tabs.speakers.SpeakersTab;
-
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -14,6 +8,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
+import gui.controll.elements.ViewChanger;
+import gui.controll.tabs.agenda.AgendaTab;
+import gui.controll.tabs.annex.AnnexTab;
+import gui.controll.tabs.claims.ClaimTab;
+import gui.controll.tabs.speakers.SpeakersTab;
 import model.TalmanModel;
 import model.TalmanModel.State;
 
@@ -31,13 +30,11 @@ public class Controller extends JFrame {
 		JPanel topPane = new JPanel(new GridLayout(1, 2));
 		JPanel leftTopPane = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		leftTopPane.add(new ViewChanger(model, kl, "Idle", "F1", State.IDLE));
-		leftTopPane
-				.add(new ViewChanger(model, kl, "Agenda", "F2", State.AGENDA));
+		leftTopPane.add(new ViewChanger(model, kl, "Agenda", "F2", State.AGENDA));
 		leftTopPane.add(new ViewChanger(model, kl, "Annex", "F3", State.ANNEX));
-		leftTopPane
-				.add(new ViewChanger(model, kl, "Claims", "F4", State.CLAIM));
-		leftTopPane.add(new ViewChanger(model, kl, "Rosa på bal", "F5",
-				State.SING));
+		leftTopPane.add(new ViewChanger(model, kl, "Claims", "F4", State.CLAIM));
+		leftTopPane.add(new ViewChanger(model, kl, "Rosa på bal", "F5", State.SING));
+		leftTopPane.add(new ViewChanger(model, kl, "Val", "F6", State.ELECTION));
 
 		JPanel rightTopPane = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 
