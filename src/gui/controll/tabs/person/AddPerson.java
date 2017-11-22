@@ -32,7 +32,7 @@ public class AddPerson extends JPanel {
 				active = pl.search(stil.getText());
 				pw.setActive(active);
 			}
-		});
+		}); 	
 		JButton add = new JButton("Add");
 		add.addActionListener(new ActionListener() {
 

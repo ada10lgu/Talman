@@ -19,7 +19,7 @@ public class ElectionViewer extends JPanel {
 	private JLabel title;
 	private JTextField participants;
 
-	public ElectionViewer(ElectionList el) {
+	public ElectionViewer(final ElectionList el) {
 		setBackground(Color.WHITE);
 
 		JButton display = new JButton("Display");
