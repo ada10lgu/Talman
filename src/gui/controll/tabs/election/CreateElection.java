@@ -12,7 +12,7 @@ import model.election.ElectionList;
 public class CreateElection extends JPanel {
 
 	public CreateElection(final ElectionList el) {
-		JTextField tf = new JTextField(20);
+		final JTextField tf = new JTextField(20);
 		tf.addActionListener(new ActionListener() {
 
 			@Override
