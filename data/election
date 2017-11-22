@@ -1,7 +1,34 @@
-[{
-    "title": "Talman",
-    "participants": [
-        "ada10lgu",
-        "lak03dbo"
-    ]
-}]
+[
+    {
+        "title": "Talman",
+        "participants": [
+            "ada10lgu",
+            "lak03dbo"
+        ]
+    },
+    {
+        "title": "Ordförande",
+        "participants": [
+            "dat15vcl",
+            "an2286qv-s"
+        ]
+    },
+    {
+        "title": "Vice ordförande",
+        "participants": ["gi2802ol-s"]
+    },
+    {
+        "title": "Studierådsordförande",
+        "participants": ["dic15jma"]
+    },
+    {"title": "Propagandamästare"},
+    {"title": "Vice Propagandamästare"},
+    {
+        "title": "Sexmästare",
+        "participants": ["dat15dah"]
+    },
+    {"title": "Vice Sexmästare"},
+    {"title": "Barmästare"},
+    {"title": "Vice Barmästare"},
+    {"title": "Pubmästare"}
+]

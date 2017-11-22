@@ -41,6 +41,8 @@ public class Election {
 
 	public List<Person> getParticipants() {
 		ArrayList<Person> ppl = new ArrayList<>();
+		if (!json.has("participants"))
+			return ppl;
 		for (Object o : json.getJSONArray("participants")) {
 			ppl.add(pl.search(o.toString()));
 		}
